@@ -148,35 +148,37 @@
     </div>
     <div id="rubic-widget-root"></div>
     <script defer type="text/javascript">
-        // describe widget configuration and saving to a global variable for future use
-        var configuration = {
-            from: 'ETH',
-            to: '0x3330BFb7332cA23cd071631837dC289B09C33333',
-            fromChain: 'ETH',
-            toChain: 'ETH',
-            amount: 1,
-            iframe: 'horizontal',
-            hideSelectionFrom: false,
-            hideSelectionTo: true,
-            tokenSearch: true,
-            rubicLink: true,
-            theme: 'dark',
-            background: '#28372e',
-            injectTokens: {
-                'eth': [
-                    '0x3330BFb7332cA23cd071631837dC289B09C33333'
-                ]
-            },
-            slippagePercent: {
-                instantTrades: 2,
-                crossChain: 5
-            }
-        }
-    
-        // prevent accidental changes to the object, for example, when re-creating a widget for another theme
-        Object.freeze(configuration);
-    
-        // create widget
-        rubicWidget.init(configuration);
-    </script>
+    // describe widget configuration and saving to a global variable for future use
+    var configuration = {
+        from: 'BNB',
+        to: '0x7134b3e6753b2547b17ea646794efff1f6da364a',
+        fromChain: 'BSC',
+        toChain: 'ARBITRUM',
+        amount: 1,
+        iframe: 'horizontal',
+        hideSelectionFrom: false,
+        hideSelectionTo: false,
+        tokenSearch: true,
+        rubicLink: false,
+        theme: 'light',
+        background: '#ffffff',
+        injectTokens: {
+            'arbitrum': [
+                '0x7134b3e6753b2547b17ea646794efff1f6da364a'
+            ]
+        },
+        slippagePercent: {
+            instantTrades: 10,
+            crossChain: 15
+        },
+        fee: 0.075,
+        feeTarget: '0x289Fa37eb92deA41dEe08BEEc454A194c77Bb1F0'
+    }
+
+    // prevent accidental changes to the object, for example, when re-creating a widget for another theme
+    Object.freeze(configuration);
+
+    // create widget
+    rubicWidget.init(configuration);
+</script>
 </body>
