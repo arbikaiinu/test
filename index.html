@@ -19,6 +19,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     <script type="text/javascript" src="https://widgets.rubic.exchange/iframe/bundle.min.js"></script>
+    <script type="text/javascript" src="https://widgets.rubic.exchange/iframe/bundle.min.js"></script>
 </head>
 
 <body>
@@ -120,12 +121,12 @@
         <br><br>
         <div class='bar'>
             <h6 id='contract' class='display-3 address'>Contract Address: <span
-                    style='font-size: 75%;'>0x7134b3E6753b2547b17Ea646794eFFf1F6Da364a</span></h6>
+                    style='font-size: 75%;'>0x0a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t</span></h6>
             <br>
             <div class='socials'>
                 <div class="row justify-content-center">
                     <div class="col-auto pr-5">
-                        <a href='https://www.dextools.io/app/en/arbitrum/pair-explorer/0x3aa600be95770c20d97badcaee739d2ae507e3b1'><img
+                        <a href='https://www.dextools.io/app/en/arbitrum/pair-explorer/0x4a8a8b0c3de168c3a76b1d2cf9376bd99806092e'><img
                                 class='socialIcon chart' src='./images/chartCircle.png'></a>
                         <p class='text-muted socialText'>Chart</p>
                     </div>
@@ -145,18 +146,37 @@
             <p class='text-center'>Back to Top</p>
         </a>
     </div>
-    <iframe
-  src="https://app.sushi.com/swap?chainId=42161&outputCurrency=0x7134b3E6753b2547b17Ea646794eFFf1F6Da364a"
-  height="450px"
-  width="40%"
-  style="
-    border: 0;
-    margin: 0 auto;
-    margin-bottom: .5rem;
-    display: block;
-    border-radius: 10px;
-    max-width: 960px;
-    min-width: 300px;
-  "
-/>
+    <div id="rubic-widget-root"></div>
+    <script defer type="text/javascript">
+        // describe widget configuration and saving to a global variable for future use
+        var configuration = {
+            from: 'ETH',
+            to: '0x3330BFb7332cA23cd071631837dC289B09C33333',
+            fromChain: 'ETH',
+            toChain: 'ETH',
+            amount: 1,
+            iframe: 'flex',
+            hideSelectionFrom: false,
+            hideSelectionTo: true,
+            tokenSearch: true,
+            rubicLink: true,
+            theme: 'dark',
+            background: '#28372e',
+            injectTokens: {
+                'eth': [
+                    '0x3330BFb7332cA23cd071631837dC289B09C33333'
+                ]
+            },
+            slippagePercent: {
+                instantTrades: 2,
+                crossChain: 5
+            }
+        }
+    
+        // prevent accidental changes to the object, for example, when re-creating a widget for another theme
+        Object.freeze(configuration);
+    
+        // create widget
+        rubicWidget.init(configuration);
+    </script>
 </body>
